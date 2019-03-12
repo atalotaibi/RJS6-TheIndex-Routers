@@ -57,10 +57,12 @@ class App extends Component {
               <AuthorsList {...props} authors={this.state.authors} />
             )}
           />
+
           <Route
-            path="/books/"
+            path="/books/:color?"
             render={props => <BookList {...props} books={this.state.books} />}
           />
+          <Route path="/not-found" render={() => <h1>NOT FOUND</h1>} />
         </Switch>
       );
     }
